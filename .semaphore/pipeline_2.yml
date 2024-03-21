@@ -1,0 +1,29 @@
+version: v1.0
+name: Pipeline 2
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Docker build
+    task:
+      jobs:
+        - name: ''
+          commands:
+            - 'echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin'
+            - 'docker pull $DOCKER_USERNAME/django-markdown-editor:latest || true'
+            - 'docker build --cache-from=$DOCKER_USERNAME/django-markdown-editor:latest -t $DOCKER_USERNAME/django-markdown-editor:latest .'
+            - 'docker push $DOCKER_USERNAME/django-markdown-editor:latest'
+      secrets:
+        - name: dockerhub
+      prologue:
+        commands:
+          - sem-version python 3.11
+          - checkout
+          - cache restore
+          - mkdir -p .pip_cache
+          - pip install --cache-dir .pip_cache -r requirements.txt
+          - cd martor_demo
+          - 'python manage.py makemigrations '
+          - python manage.py migrate
+          - cd ..
