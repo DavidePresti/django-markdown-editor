@@ -8,7 +8,7 @@ blocks:
   - name: Docker build
     task:
       jobs:
-        - name: ''
+        - name: 'Job#1'
           commands:
             - 'echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin'
             - 'docker pull $DOCKER_USERNAME/django-markdown-editor:latest || true'
