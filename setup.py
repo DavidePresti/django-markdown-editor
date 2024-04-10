@@ -1,5 +1,6 @@
-from setuptools import setup, find_packages
-from martor import __VERSION__, __AUTHOR__, __AUTHOR_EMAIL__
+from setuptools import find_packages, setup
+
+from martor import __AUTHOR__, __AUTHOR_EMAIL__, __VERSION__
 
 
 def get_requirements():
@@ -34,8 +35,6 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: JavaScript",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
@@ -43,4 +42,11 @@ setup(
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     ],
     install_requires=get_requirements(),
+    project_urls={
+        "Documentation": "https://github.com/agusmakmun/django-markdown-editor?tab=readme-ov-file#installation",
+        "Release notes": "https://github.com/agusmakmun/django-markdown-editor/releases",
+        "Funding": "https://www.paypal.com/paypalme/summonagus",
+        "Source": "https://github.com/agusmakmun/django-markdown-editor",
+        "Issue Tracker": "https://github.com/agusmakmun/django-markdown-editor/issues",
+    },
 )

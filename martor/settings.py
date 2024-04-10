@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.conf import settings
 
 # Choices are: "semantic", "bootstrap"
@@ -72,6 +69,7 @@ MARTOR_MARKDOWN_EXTENSIONS = getattr(
         "markdown.extensions.nl2br",
         "markdown.extensions.smarty",
         "markdown.extensions.fenced_code",
+        "markdown.extensions.sane_lists",
         # Custom markdown extensions.
         "martor.extensions.urlize",
         "martor.extensions.del_ins",  # ~~strikethrough~~ and ++underscores++
@@ -90,13 +88,15 @@ MARTOR_MARKDOWN_EXTENSION_CONFIGS = getattr(
 # Markdown urls
 MARTOR_UPLOAD_URL = (
     # Allows to disable this endpoint
-    settings.MARTOR_UPLOAD_URL if hasattr(settings, "MARTOR_UPLOAD_URL")
+    settings.MARTOR_UPLOAD_URL
+    if hasattr(settings, "MARTOR_UPLOAD_URL")
     else "/martor/uploader/"
 )
 
 MARTOR_SEARCH_USERS_URL = (
     # Allows to disable this endpoint
-    settings.MARTOR_SEARCH_USERS_URL if hasattr(settings, "MARTOR_SEARCH_USERS_URL")
+    settings.MARTOR_SEARCH_USERS_URL
+    if hasattr(settings, "MARTOR_SEARCH_USERS_URL")
     else "/martor/search-user/"
 )
 

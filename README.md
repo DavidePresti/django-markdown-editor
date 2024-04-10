@@ -131,6 +131,7 @@ MARTOR_MARKDOWN_EXTENSIONS = [
     'markdown.extensions.nl2br',
     'markdown.extensions.smarty',
     'markdown.extensions.fenced_code',
+    'markdown.extensions.sane_lists',
 
     # Custom markdown extensions.
     'martor.extensions.urlize',
@@ -376,7 +377,7 @@ Checkout at http://127.0.0.1:8000/simple-form/ on your browser.
 [7]: https://img.shields.io/pypi/pyversions/martor.svg
 [8]: https://pypi.python.org/pypi/martor
 
-[9]: https://img.shields.io/badge/Django-3.2%20%3E=%204.1-green.svg
+[9]: https://img.shields.io/badge/Django-3.2%20%3E=%204.2-green.svg
 [10]: https://www.djangoproject.com
 
 [11]: https://img.shields.io/github/actions/workflow/status/agusmakmun/django-markdown-editor/run-tests.yml?branch=master
@@ -386,7 +387,7 @@ Checkout at http://127.0.0.1:8000/simple-form/ on your browser.
 [14]: https://github.com/agusmakmun/django-markdown-editor/tree/master/martor_demo/app/templates
 [15]: https://github.com/adi-/django-markdownx
 [16]: https://github.com/waylan/Python-Markdown
-[17]: http://rst.ninjs.org
+[17]: https://rsted.info.ucl.ac.be
 
 [18]: https://img.shields.io/badge/code%20style-black-000000.svg
 [19]: https://github.com/ambv/black
